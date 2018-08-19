@@ -17,17 +17,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/aosp/common.mk)
+$(call inherit-product, vendor/carbon/config/common.mk)
 
-PRODUCT_NAME := aosp_hammerhead
+PRODUCT_NAME := carbon_hammerhead
 PRODUCT_DEVICE := hammerhead
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := Nexus 5
 PRODUCT_MANUFACTURER := LGE
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# AospExtended-BuildType
-EXTENDED_BUILD_TYPE := OFFICIAL
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=hammerhead \
@@ -36,7 +34,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 $(call inherit-product, device/lge/hammerhead/device.mk)
 $(call inherit-product-if-exists, vendor/lge/hammerhead/device-vendor.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
 
 #$(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 
